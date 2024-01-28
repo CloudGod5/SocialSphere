@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .logo {
+        margin-bottom: 20px;
+      }
+      .content {
+        line-height: 1.6;
+      }
+      .code {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        color: #333333;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 20px;
+        letter-spacing: 3px;
+      }
+      .footer {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 0.8em;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img
+          src="{{LOGO_URL}}"
+          alt="Logo"
+          style="max-width: 200px; height: auto"
+        />
+        <h1>{{CLUBNAME}}</h1>
+      </div>
+      <div class="content">
+        <h2>Two-Factor Authentication Code</h2>
+        <p>Your Two-Factor Authentication (2FA) code is:</p>
+        <div class="code">{{TWO_FACTOR_CODE}}</div>
+        <p>Please enter this code to complete your sign-in process.</p>
+        <p>This code will expire in 15 minutes.</p>
+      </div>
+      <div class="footer">
+        <p>&copy; 2024 SocialSphere. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
