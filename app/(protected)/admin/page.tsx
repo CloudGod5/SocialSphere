@@ -38,15 +38,6 @@ const AdminPage = () => {
                         Click to test
                     </Button>
                 </div>
-                <div className="flex flex-row items-center justify-between
-                rounded-lg border p-3 shadow-md">
-                    <p className="text-sm font-md">
-                        Admin-only Server Action
-                    </p>
-                    <Button>
-                        Click to test
-                    </Button>
-                </div>
             </CardContent>
         </Card>
     );
