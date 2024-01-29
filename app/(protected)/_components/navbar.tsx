@@ -16,26 +16,18 @@ export const Navbar = () => {
             <div className="flex gap-x-2">
                 <Button
                     asChild
-                    variant={pathname === "/home" ? "default" : "outline"}
+                    variant={pathname === "/client" ? "default" : "outline"}
                 >
-                    <Link href="/home">
-                        Home
+                    <Link href="/client">
+                        Client
                     </Link>
                 </Button>
                 <Button
                     asChild
-                    variant={pathname === "/friends" ? "default" : "outline"}
+                    variant={pathname === "/server" ? "default" : "outline"}
                 >
-                    <Link href="/friends">
-                        Friends
-                    </Link>
-                </Button>
-                <Button
-                    asChild
-                    variant={pathname === "/events" ? "default" : "outline"}
-                >
-                    <Link href="/events">
-                        Events
+                    <Link href="/server">
+                        Server
                     </Link>
                 </Button>
                 <Button
@@ -48,10 +40,18 @@ export const Navbar = () => {
                 </Button>
                 <Button
                     asChild
-                    variant={pathname === "/settings" ? "default" : "outline"}
+                    variant={pathname === "/settings/account" ? "default" : "outline"}
                 >
-                    <Link href="/settings">
-                        Settings
+                    <Link href="/settings/account">
+                        Account Settings
+                    </Link>
+                </Button>
+                <Button
+                    asChild
+                    variant={pathname === "/settings/profile" ? "default" : "outline"}
+                >
+                    <Link href="/settings/profile">
+                        Profile Settings
                     </Link>
                 </Button>
             </div>

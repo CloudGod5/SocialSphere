@@ -37,7 +37,6 @@ const SettingsPage = () => {
         resolver: zodResolver(SettingsSchema),
         defaultValues: {
             name: undefined,
-            userName: undefined,
             phoneNumber: undefined,
             email: undefined,
             password: undefined,
@@ -68,7 +67,7 @@ const SettingsPage = () => {
         <Card className="w-[600px]">
             <CardHeader>
                 <p className="text-2xl font-semibold text-center">
-                    ⚙️ Settings
+                    ⚙️ Account Settings
                 </p>
             </CardHeader>
             <CardContent>
@@ -85,23 +84,6 @@ const SettingsPage = () => {
                                             <Input 
                                             {...field}
                                             placeholder={user?.name || undefined}
-                                            disabled={isPending}
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField 
-                                control={form.control}
-                                name="userName"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Username</FormLabel>
-                                        <FormControl>
-                                            <Input 
-                                            {...field}
-                                            placeholder={user?.username || undefined}
                                             disabled={isPending}
                                             />
                                         </FormControl>

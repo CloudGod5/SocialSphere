@@ -5,6 +5,7 @@ import { db } from "@/lib/db"
 import { getUserById } from "@/data/user"
 import { UserRoles } from "@prisma/client"
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation"
+import { geAccountByUserId } from "@/data/account"
 
 interface JWT {
     id: string;
@@ -30,7 +31,7 @@ export const {
       }),
       await db.user.update({
         where: { id: user.id },
-        data: { userName: user.name },
+        data: { username: user.name },
       })
     }
   },
@@ -63,8 +64,8 @@ export const {
       if (token.sub && session.user) {
         session.user.id = token.sub
       }
-      if (token.userName && session.user) {
-        session.user.userName = token.userName as string;
+      if (token.username && session.user) {
+        session.user.username = token.username as string;
       }
 
       if (token.role && session.user) {
@@ -74,18 +75,34 @@ export const {
       if (session.user) {
         session.user.isTwoFactorEnabled = token.isTwoFactorEnabled as boolean;
       }
+
+      if (session.user) {
+        session.user.name = token.name as string;
+        session.user.email = token.email as string;
+        session.user.phoneNumber = token.phoneNumber as string;
+        session.user.profilePicture = token.profilePicture as string;
+        session.user.coverPhoto = token.coverPhoto as string;
+        session.user.isOAuth = token.isOAuth as boolean;
+      }
       
       return session
     },
 
     async jwt({ token }) { 
-
       if (!token.sub) return token;
 
       const existingUser = await getUserById(token.sub);
       if (!existingUser) return token;
+
+      const existingAccount = await geAccountByUserId(token.sub);
       
-      token.userName = existingUser.userName;
+      token.isOAuth = !!existingAccount;
+      token.name = existingUser.name;
+      token.email = existingUser.email;
+      token.username = existingUser.username;
+      token.phoneNumber = existingUser.phoneNumber;
+      token.profilePicture = existingUser.image;
+      token.coverPhoto = existingUser.coverPhoto;
       token.role = existingUser.role;
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
 
