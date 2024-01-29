@@ -4,6 +4,7 @@ import './globals.css'
 import { auth } from '@/auth'
 import { SessionProvider } from 'next-auth/react'
 const inter = Inter({ subsets: ['latin'] })
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,7 +20,10 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Toaster />
+          {children}
+        </body>
       </html>
     </SessionProvider>
   )

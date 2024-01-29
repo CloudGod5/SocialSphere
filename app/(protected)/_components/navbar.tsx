@@ -38,14 +38,14 @@ export const Navbar = () => {
                         Events
                     </Link>
                 </Button>
-                {/* <Button
+                <Button
                     asChild
                     variant={pathname === "/admin" ? "default" : "outline"}
                 >
                     <Link href="/admin">
                         Admin
                     </Link>
-                </Button> */}
+                </Button>
                 <Button
                     asChild
                     variant={pathname === "/settings" ? "default" : "outline"}

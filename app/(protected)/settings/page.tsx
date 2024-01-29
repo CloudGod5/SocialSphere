@@ -1,17 +1,17 @@
 "use client";
 
-import { logout } from "@/actions/logout"
-import { useCurrentUser } from "@/hooks/use-current-user";
+import { Card, CardHeader } from "@/components/ui/card";
 
 const SettingsPage = () => {
-    const user = useCurrentUser();
-
-    const onClick = () => {
-        logout();
-    }
 
     return (
-        <div>Settings Page</div>
+        <Card className="w-[600px]">
+            <CardHeader>
+                <p className="text-2xl font-semibold text-center">
+                    ⚙️ Settings
+                </p>
+            </CardHeader>
+        </Card>
     );
 };
 
