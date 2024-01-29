@@ -43,7 +43,7 @@ export const UserInfo =({ user, label }: UserInfoProps) => {
                     </p>
                     <p className="truncate text-xs max-w-[180px]
                     font-mono p-1 bg-slate-100 rounded-md">
-                        {user?.username}
+                        {user?.userName}
                     </p>
                 </div>
                 <div className="flex flex-row items-center

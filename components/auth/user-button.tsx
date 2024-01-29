@@ -36,11 +36,6 @@ export const UserButton = () => {
                         </span>
                     </span>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                    <span className="w-4 h-4 mr-3">
-                        Profile
-                    </span>
-                </DropdownMenuItem>
                 <LogoutButton>
                     <DropdownMenuItem>
                         <ExitIcon className="w-4 h-4 mr-3" />

@@ -68,7 +68,7 @@ const SettingsPage = () => {
         <Card className="w-[600px]">
             <CardHeader>
                 <p className="text-2xl font-semibold text-center">
-                    ⚙️ Settings
+                    ⚙️ Account Settings
                 </p>
             </CardHeader>
             <CardContent>
@@ -101,7 +101,7 @@ const SettingsPage = () => {
                                         <FormControl>
                                             <Input 
                                             {...field}
-                                            placeholder={user?.username || undefined}
+                                            placeholder={user?.userName || undefined}
                                             disabled={isPending}
                                             />
                                         </FormControl>

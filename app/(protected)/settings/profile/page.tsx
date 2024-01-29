@@ -77,7 +77,7 @@ const SettingsPage = () => {
                                         <FormControl>
                                             <Input 
                                             {...field}
-                                            placeholder={user?.username || undefined}
+                                            placeholder={user?.userName || undefined}
                                             disabled={isPending}
                                             />
                                         </FormControl>

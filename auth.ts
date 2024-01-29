@@ -31,7 +31,7 @@ export const {
       }),
       await db.user.update({
         where: { id: user.id },
-        data: { username: user.name },
+        data: { userName: user.name },
       })
     }
   },
@@ -64,8 +64,8 @@ export const {
       if (token.sub && session.user) {
         session.user.id = token.sub
       }
-      if (token.username && session.user) {
-        session.user.username = token.username as string;
+      if (token.userName && session.user) {
+        session.user.userName = token.userName as string;
       }
 
       if (token.role && session.user) {
@@ -99,10 +99,8 @@ export const {
       token.isOAuth = !!existingAccount;
       token.name = existingUser.name;
       token.email = existingUser.email;
-      token.username = existingUser.username;
+      token.userName = existingUser.userName;
       token.phoneNumber = existingUser.phoneNumber;
-      token.profilePicture = existingUser.image;
-      token.coverPhoto = existingUser.coverPhoto;
       token.role = existingUser.role;
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
 
