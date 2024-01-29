@@ -1,4 +1,4 @@
-import { TreeState } from 'react-stately';
+import { TreeState } from '@react-stately/collections';
 import { DropdownMenuItem } from './DropdownMenuItem';
 import type { Node } from '@react-types/shared';
 import { AriaMenuSectionProps, useMenuSection, useSeparator } from 'react-aria';

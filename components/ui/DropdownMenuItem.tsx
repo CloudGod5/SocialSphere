@@ -1,6 +1,6 @@
 import { Key, useRef } from 'react';
 import { useMenuItem } from 'react-aria';
-import { TreeState } from 'react-stately';
+import { TreeState } from '@react-stately/collections';
 import type { Node } from '@react-types/shared';
 import { cn } from '@/lib/cn';
 

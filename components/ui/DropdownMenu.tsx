@@ -1,6 +1,6 @@
 import { Key, useRef } from 'react';
 import { AriaMenuProps, useMenu } from 'react-aria';
-import { useTreeState } from 'react-stately';
+import { useTreeState } from '@react-stately/collections';
 import { DropdownMenuSection } from './DropdownMenuSection';
 
 interface MenuProps<T extends object> extends AriaMenuProps<T> {

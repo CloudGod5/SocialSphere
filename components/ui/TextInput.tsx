@@ -4,7 +4,7 @@ import { useObjectRef } from '@react-aria/utils';
 import { SVGProps, forwardRef } from 'react';
 import { AriaTextFieldProps, useTextField } from 'react-aria';
 import Button from './Button';
-import SvgClose from '@/svg_components/Close';
+import SvgClose from '@/components/svg/Close';
 
 interface TextInputProps extends AriaTextFieldProps {
   className?: string;

@@ -8,7 +8,7 @@ import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation
 
 interface JWT {
     id: string;
-    userName: string;
+    username: string;
     role: 'ADMIN' | 'USER' | 'PARENT' | 'COACH';
 }
 
@@ -30,7 +30,7 @@ export const {
       }),
       await db.user.update({
         where: { id: user.id },
-        data: { userName: user.name },
+        data: { username: user.name },
       })
     }
   },
@@ -63,8 +63,8 @@ export const {
       if (token.sub && session.user) {
         session.user.id = token.sub
       }
-      if (token.userName && session.user) {
-        session.user.userName = token.userName as string;
+      if (token.username && session.user) {
+        session.user.username = token.username as string;
       }
 
       if (token.role && session.user) {
@@ -85,7 +85,7 @@ export const {
       const existingUser = await getUserById(token.sub);
       if (!existingUser) return token;
       
-      token.userName = existingUser.userName;
+      token.username = existingUser.username;
       token.role = existingUser.role;
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
 

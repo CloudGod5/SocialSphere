@@ -1,5 +1,5 @@
 import type { AriaSelectProps } from '@react-types/select';
-import { useSelectState } from 'react-stately';
+import { useSelectState } from '@react-stately/collections';
 import { useSelect, HiddenSelect, useButton } from 'react-aria';
 import { ListBox } from './SelectListBox';
 import { Popover } from './Popover';
@@ -7,8 +7,8 @@ import { ForwardedRef, SVGProps, forwardRef } from 'react';
 import { cn } from '@/lib/cn';
 import { useObjectRef } from '@react-aria/utils';
 import Button from './Button';
-import SvgClose from '@/svg_components/Close';
-import SvgArrowChevronDown from '@/svg_components/ArrowChevronDown';
+import SvgClose from '@/components/svg/Close';
+import SvgArrowChevronDown from '@/components/svg/ArrowChevronDown';
 
 interface SelectProps<T> extends AriaSelectProps<T> {
   Icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;

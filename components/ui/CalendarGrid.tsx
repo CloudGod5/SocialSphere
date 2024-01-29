@@ -1,7 +1,7 @@
 import { AriaCalendarGridProps, useCalendarGrid, useLocale } from 'react-aria';
 import { getWeeksInMonth } from '@internationalized/date';
 import { CalendarCell } from './CalendarCell';
-import { CalendarState, RangeCalendarState } from 'react-stately';
+import { CalendarState, RangeCalendarState } from '@react-stately/collections';
 
 interface CalendarGridProps extends AriaCalendarGridProps {
   state: CalendarState | RangeCalendarState;

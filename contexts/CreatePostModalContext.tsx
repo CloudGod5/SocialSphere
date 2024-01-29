@@ -7,7 +7,7 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useOverlayTriggerState } from 'react-stately';
+import { useOverlayTriggerState } from '@react-stately/collections';
 import { AnimatePresence } from 'framer-motion';
 import { Modal } from '@/components/Modal';
 import { CreatePostDialog } from '@/components/CreatePostDialog';

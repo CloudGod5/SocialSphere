@@ -1,10 +1,10 @@
 import { Key, SVGProps, useRef } from 'react';
 import { AriaMenuProps, useMenuTrigger } from 'react-aria';
-import { MenuTriggerProps, useMenuTriggerState } from 'react-stately';
+import { MenuTriggerProps, useMenuTriggerState } from '@react-stately/collections';
 import Button from './Button';
 import { Popover } from './Popover';
 import { DropdownMenu } from './DropdownMenu';
-import { MoreVert } from '@/svg_components';
+import { MoreVert } from '@/components/svg';
 import { cn } from '@/lib/cn';
 
 interface MenuButtonProps<T extends object>

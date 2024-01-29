@@ -7,7 +7,7 @@ import {
   useFocusRing,
   useToggleButton,
 } from 'react-aria';
-import { useToggleState } from 'react-stately';
+import { useToggleState } from '@react-stately/collections';
 
 const toggle = cva(
   'flex cursor-pointer select-none items-center gap-3 rounded-full px-4 py-2 active:ring-4',

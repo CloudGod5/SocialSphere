@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from '@/hooks/useTheme';
-import { DeviceLaptop, WeatherMoon, WeatherSun } from '@/svg_components';
+import { DeviceLaptop, WeatherMoon, WeatherSun } from '@/components/svg';
 import { motion } from 'framer-motion';
 
 export function ThemeSwitch() {

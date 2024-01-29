@@ -2,7 +2,7 @@ import type { AriaToastProps } from '@react-aria/toast';
 import { useToast } from '@react-aria/toast';
 import { QueuedToast, ToastState } from '@react-stately/toast';
 import { SVGProps, useRef } from 'react';
-import Button from './Button';
+import Button from './Button1';
 import { ToastType } from '@/contexts/ToastContext';
 import {
   CircleActionsAlertInfo,
@@ -10,7 +10,7 @@ import {
   CircleActionsSuccess,
   Close,
   NotificationBell,
-} from '@/svg_components';
+} from '@/components/svg';
 import { cn } from '@/lib/cn';
 
 interface ToastProps<T> extends AriaToastProps<T> {

@@ -1,8 +1,8 @@
 import type { AriaListBoxOptions } from '@react-aria/listbox';
-import type { ListState } from 'react-stately';
+import type { ListState } from '@react-stately/collections';
 import type { Node } from '@react-types/shared';
 import { useListBox, useListBoxSection, useOption } from 'react-aria';
-import { Check } from '@/svg_components';
+import { Check } from '@/components/svg';
 import { cn } from '@/lib/cn';
 import { useRef } from 'react';
 

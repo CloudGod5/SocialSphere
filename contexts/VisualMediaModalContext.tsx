@@ -6,7 +6,7 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useOverlayTriggerState } from 'react-stately';
+import { useOverlayTriggerState } from '@react-stately/collections';
 import { GetVisualMedia } from '@/types/definitions';
 import { AnimatePresence } from 'framer-motion';
 import { Modal } from '@/components/Modal';

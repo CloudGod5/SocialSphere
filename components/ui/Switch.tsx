@@ -1,4 +1,4 @@
-import { useToggleState } from 'react-stately';
+import { useToggleState } from '@react-stately/collections';
 import {
   AriaSwitchProps,
   useFocusRing,

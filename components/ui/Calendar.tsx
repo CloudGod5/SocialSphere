@@ -1,8 +1,8 @@
-import { useCalendarState } from 'react-stately';
+import { useCalendarState } from '@react-stately/collections';
 import { AriaCalendarProps, useCalendar, useLocale } from 'react-aria';
 import { createCalendar } from '@internationalized/date';
 import { CalendarGrid } from './CalendarGrid';
-import { ArrowChevronBack, ArrowChevronForward } from '@/svg_components';
+import { ArrowChevronBack, ArrowChevronForward } from '@/components/svg';
 import Button from './Button';
 import { DateValue } from '@react-types/calendar';
 

@@ -45,10 +45,10 @@ export const RegisterSchema = z.object({
   }).regex(/^[a-zA-Z\s]*$/, {
       message: "Name can only contain letters and spaces"
   }),
-  userName: z.string().min(1, {
-    message: "Username is required"
+  username: z.string().min(1, {
+    message: "username is required"
   }).regex(/^[a-zA-Z0-9]*$/, {
-        message: "Username can only contain letters and numbers, no special characters or spaces"
+        message: "username can only contain letters and numbers, no special characters or spaces"
   }),
   email: z.string().email({
     message: "Invalid email",

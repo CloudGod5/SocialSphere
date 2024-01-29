@@ -1,4 +1,4 @@
-import type { OverlayTriggerState } from 'react-stately';
+import type { OverlayTriggerState } from '@react-stately/collections';
 import type { AriaPopoverProps } from '@react-aria/overlays';
 import * as React from 'react';
 import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';

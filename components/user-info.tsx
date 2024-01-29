@@ -39,11 +39,11 @@ export const UserInfo =({ user, label }: UserInfoProps) => {
                 <div className="flex flex-row items-center
                 justify-between rounded-lg border p-3 shadow-sm">
                     <p className="text-sm font-medium">
-                        Username
+                        username
                     </p>
                     <p className="truncate text-xs max-w-[180px]
                     font-mono p-1 bg-slate-100 rounded-md">
-                        {user?.userName}
+                        {user?.username}
                     </p>
                 </div>
                 <div className="flex flex-row items-center

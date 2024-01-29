@@ -29,7 +29,7 @@ export const UserButton = () => {
                 <DropdownMenuItem>
                     <span className="flex flex-col">
                         <span className="text-sm font-bold">
-                            {user?.userName}
+                            {user?.username}
                         </span>
                         <span className="text-xs text-gray-500">
                             {user?.email}

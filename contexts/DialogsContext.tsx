@@ -9,7 +9,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useOverlayTriggerState } from 'react-stately';
+import { useOverlayTriggerState } from '@react-stately/collections';
 import { Modal } from '../components/Modal';
 import { AlertDialog } from '../components/AlertDialog';
 import Button from '@/components/ui/Button';

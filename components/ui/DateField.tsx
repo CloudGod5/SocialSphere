@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { DateFieldState, DateSegment, useDateFieldState } from 'react-stately';
+import { DateFieldState, DateSegment, useDateFieldState } from '@react-stately/collections';
 import {
   AriaDateFieldProps,
   DateValue,

@@ -7,7 +7,7 @@ import {
   AriaCalendarCellProps,
 } from 'react-aria';
 import { isSameDay, getDayOfWeek } from '@internationalized/date';
-import { CalendarState, RangeCalendarState } from 'react-stately';
+import { CalendarState, RangeCalendarState } from '@react-stately/collections';
 
 interface CalendarCellProps extends AriaCalendarCellProps {
   state: CalendarState | RangeCalendarState;
