@@ -26,6 +26,16 @@ export const UserButton = () => {
                 </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40" align="end">
+                <DropdownMenuItem>
+                    <span className="flex flex-col">
+                        <span className="text-sm font-bold">
+                            {user?.userName}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                            {user?.email}
+                        </span>
+                    </span>
+                </DropdownMenuItem>
                 <LogoutButton>
                     <DropdownMenuItem>
                         <ExitIcon className="w-4 h-4 mr-3" />

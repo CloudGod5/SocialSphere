@@ -12,7 +12,9 @@ import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
 import { db } from "@/lib/db";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
 
-export const login = async (values: z.infer<typeof LoginSchema>) => {
+export const login = async (values: z.infer<typeof LoginSchema>,
+    callbackUrl?: string | null,
+    ) => {
     const validatedFields = LoginSchema.safeParse(values);
     if (!validatedFields.success) {
         return { error: "Invalid fields!" };
@@ -20,6 +22,9 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
 
     const { email, password, code } = validatedFields.data;
     const existingUser = await getUserByEmail(email);
+    if (existingUser?.isActive === false) {
+        return { error: "Account is not active!" };
+    }
     if (!existingUser || !existingUser.email || !existingUser.password) {
         return { error: "Email does not Exists!" };
     };
@@ -78,7 +83,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
         await signIn("credentials", { 
             email,
             password,
-            redirectTo: DEFAULT_LOGIN_REDIRECT,
+            redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT,
         });
         return { success: true };
     } catch (error) {

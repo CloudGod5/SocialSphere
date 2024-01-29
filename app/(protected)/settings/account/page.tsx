@@ -26,7 +26,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { UserRoles } from "@prisma/client";
 import { Switch } from "@/components/ui/switch";
 
-const SettingsPage = () => {
+const AccountSettingsPage = () => {
     const user = useCurrentUser();
     const { update } = useSession();
     const [isPending, startTransition] = useTransition();
@@ -68,7 +68,7 @@ const SettingsPage = () => {
         <Card className="w-[600px]">
             <CardHeader>
                 <p className="text-2xl font-semibold text-center">
-                    ⚙️ Account Settings
+                    ⚙️ Settings
                 </p>
             </CardHeader>
             <CardContent>
@@ -250,4 +250,4 @@ const SettingsPage = () => {
     );
 };
 
-export default SettingsPage;
+export default AccountSettingsPage;

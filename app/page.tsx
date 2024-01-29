@@ -18,18 +18,18 @@ export default function Home() {
           "text-6xl font-semibold text-white drop-shadow-md",
           font.className,
         )}>
-          🔐 Auth
+          Social Sphere
         </h1>
         <div className="space-y-1">
           <p className="text-white text-lg">
-            A simple Authentication Service 
+            A social media platform for private teams, club, organizations, and events. 
           </p>
           <p className="text-white text-sm">
           created by SocialSphere.
           </p>
         </div>
         <div>
-          <LoginButton >
+          <LoginButton mode="modal" asChild>
             <Button variant='secondary' size='lg'>
               Sign In
             </Button>

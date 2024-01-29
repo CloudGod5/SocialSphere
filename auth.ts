@@ -5,6 +5,7 @@ import { db } from "@/lib/db"
 import { getUserById } from "@/data/user"
 import { UserRoles } from "@prisma/client"
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation"
+import { geAccountByUserId } from "@/data/account"
 
 interface JWT {
     id: string;
@@ -70,19 +71,38 @@ export const {
       if (token.role && session.user) {
         session.user.role = token.role as UserRoles;
       }
+
+      if (session.user) {
+        session.user.isTwoFactorEnabled = token.isTwoFactorEnabled as boolean;
+      }
+
+      if (session.user) {
+        session.user.name = token.name as string;
+        session.user.email = token.email as string;
+        session.user.phoneNumber = token.phoneNumber as string;
+        session.user.profilePicture = token.profilePicture as string;
+        session.user.coverPhoto = token.coverPhoto as string;
+        session.user.isOAuth = token.isOAuth as boolean;
+      }
       
       return session
     },
 
     async jwt({ token }) { 
-
       if (!token.sub) return token;
 
       const existingUser = await getUserById(token.sub);
       if (!existingUser) return token;
+
+      const existingAccount = await geAccountByUserId(token.sub);
       
+      token.isOAuth = !!existingAccount;
+      token.name = existingUser.name;
+      token.email = existingUser.email;
       token.userName = existingUser.userName;
+      token.phoneNumber = existingUser.phoneNumber;
       token.role = existingUser.role;
+      token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
 
       return token 
     }

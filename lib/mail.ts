@@ -6,6 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const clubName = `${process.env.NEXT_PUBLIC_CLUB_NAME}`;
 const fromAddress = `${process.env.RESEND_FROM_EMAIL}`;
 const logoURL = `${process.env.NEXT_PUBLIC_LOGO_URL}`;
+const domain = `${process.env.NEXT_PUBLIC_APP_URL}`;
 
 export const sendTowFactorTokenEmail = async (email: string, token: string) => {
     const templatePath = path.join(process.cwd(), 'public', 'templates', 'twoFactorEmail.html');
@@ -34,7 +35,7 @@ export const sendTowFactorTokenEmail = async (email: string, token: string) => {
   }
 
 export const sendPasswordResetEmail = async (email: string, token: string) => {
-  const resetLink = `${process.env.NEXT_URL}/auth/new-password?token=${token}`;
+  const resetLink = `${domain}/auth/new-password?token=${token}`;
   const templatePath = path.join(process.cwd(), 'public', 'templates', 'resetPassword.html');
 
   try {
@@ -61,7 +62,7 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
 }
 
 export const sendVerificationEmail = async (email: string, token: string) => {
-  const confirmLink = `${process.env.NEXT_URL}/auth/new-verification?token=${token}`;
+  const confirmLink = `${domain}/auth/new-verification?token=${token}`;
   const templatePath = path.join(process.cwd(), 'public', 'templates', 'confirmEmail.html');
 
   try {
