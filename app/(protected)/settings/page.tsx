@@ -126,6 +126,8 @@ const SettingsPage = () => {
                                     </FormItem>
                                 )}
                             />
+                            {user?.isOAuth === false && (
+                            <>
                             <FormField 
                                 control={form.control}
                                 name="email"
@@ -143,6 +145,8 @@ const SettingsPage = () => {
                                     </FormItem>
                                 )}
                             />
+                            </>
+                            )}
                             <FormField 
                                 control={form.control}
                                 name="role"
